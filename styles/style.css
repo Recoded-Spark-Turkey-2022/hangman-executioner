@@ -1,0 +1,9 @@
+.hidden {
+    display: none;
+}
+
+p#gameOver {
+    position: absolute;
+    font-size: larger;
+    color: red;
+}
