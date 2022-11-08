@@ -27,8 +27,20 @@ fetch("https://random-word-api.herokuapp.com/word?number=1")
       const letterBlank = document.querySelector(".wordLetter");
       letterBlank.appendChild(eachLetter);
     });
-  });
+    
+    
+    
 
+    function hintDiv(){
+      fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+      .then((resp)=> resp.json())
+      .then((definition)=>{
+      console.log(definition[0].meanings[0].definitions[0].definition)
+      })}
+      
+  });
+  const hintButton=document.getElementById("hint");
+  hintButton.addEventListener("click", hintDiv)
 // Click event listener
 letterDiv.addEventListener("click", ifFounded)
 
